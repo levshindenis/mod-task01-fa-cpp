@@ -1,3 +1,4 @@
+#include "fun.h"
 #include <iostream>
 unsigned int faStr1(const char* str)
 {
