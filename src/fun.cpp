@@ -4,7 +4,7 @@ unsigned int faStr1(const char* str)
 {
     int i = 0, count = 0, state = 'a';
     bool f = false;
-    while (str[i] != '\0' && str[i] != '\n')
+    while (str[i] != '\0')
     {
         if (state == 'a' && str[i] != ' ')
         {
@@ -18,9 +18,9 @@ unsigned int faStr1(const char* str)
             state = 'a';
             if (!f) count++;
         }
-        if (state == 'b' && (str[i + 1] == '\n' || str[i + 1] == '\0')) count++;
         i++;
     }
+    if (state == 'b' && (f == true)) count++;
     return count;
 }
 
@@ -28,7 +28,7 @@ unsigned int faStr2(const char* str)
 {
     int i = 0, count = 0, state = 'a';
     bool f = false;
-    while (str[i] != '\0' && str[i] != '\n')
+    while (str[i] != '\0')
     {
         if (state == 'a' && str[i] != ' ')
         {
@@ -41,10 +41,9 @@ unsigned int faStr2(const char* str)
             state = 'a';
             if (!f) count++;
         }
-        if (state == 'b' && (str[i + 1] == '\n' || str[i + 1] == '\0')) count++;
-        i++;
         i++;
     }
+    if (state == 'b' && (f == true)) count++;
     return count;
 }
 
