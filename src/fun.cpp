@@ -20,7 +20,7 @@ unsigned int faStr1(const char* str)
         }
         i++;
     }
-    if (state == 'b' && (f == true)) count++;
+    if (state == 'b' && (f == false)) count++;
     return count;
 }
 
@@ -43,7 +43,7 @@ unsigned int faStr2(const char* str)
         }
         i++;
     }
-    if (state == 'b' && (f == true)) count++;
+    if (state == 'b' && (f == false)) count++;
     return count;
 }
 
