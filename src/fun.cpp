@@ -1,5 +1,4 @@
 #include "fun.h"
-#include <iostream>
 unsigned int faStr1(const char* str)
 {
     int i = 0, count = 0, state = 'a';
