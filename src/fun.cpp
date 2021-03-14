@@ -1,4 +1,4 @@
-#include "fun.h"
+#include "fun2.h"
 unsigned int faStr1(const char* str)
 {
     int i = 0, count = 0, state = 'a';
@@ -11,7 +11,8 @@ unsigned int faStr1(const char* str)
             if (int(str[i]) > 47 && int(str[i]) < 58) f = true;
             else f = false;
         }
-        else if (state == 'b' && str[i] != ' ') { if (int(str[i]) > 47 && int(str[i]) < 58) f = true; }
+        else if (state == 'b' && str[i] != ' ') 
+        { if (int(str[i]) > 47 && int(str[i]) < 58) f = true; }
         else if (state == 'b' && str[i] == ' ')
         {
             state = 'a';
@@ -48,8 +49,8 @@ unsigned int faStr2(const char* str)
 
 unsigned int faStr3(const char* str)
 {
-    int i = 0, state = 'a';
-    double  count = 0, countc = 0;
+    int i = 0, state = 'a', sr1;
+    double  count = 0, countc = 0, sr;
     while (str[i] != '\0' && str[i] != '\n')
     {
         if (state == 'a' && str[i] != ' ')
@@ -68,5 +69,8 @@ unsigned int faStr3(const char* str)
         }
         i++;
     }
-    return round(countc / count);
+    sr = countc / count;
+    sr1 = sr;
+    if (sr - sr1 >= 0.5) sr1++;
+    return sr1;
 }
